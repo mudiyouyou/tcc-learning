@@ -3,16 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>tcc-all</artifactId>
+        <artifactId>tcc-parent</artifactId>
         <groupId>com.mudiyouyou</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../tcc-all/pom.xml</relativePath>
+        <relativePath>../tcc-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>tcc-order</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.mudiyouyou</groupId>
+            <artifactId>tcc-order-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
