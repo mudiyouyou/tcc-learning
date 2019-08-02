@@ -2,14 +2,14 @@ package com.mudiyouyou.tcc.order;
 
 import com.mudiyouyou.tcc.order.vo.BizOrder;
 import org.dromara.hmily.annotation.Hmily;
+import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
 
 public interface IOrderService {
 
-    BizOrder getOrderById(String oid);
+    BizOrder getOrderById(Integer oid);
 
     @Hmily
-    void updateSuccess(String oid);
+    void applyPay(Integer oid);
 
-    @Hmily
-    void updateFail(String oid);
+    void create(Integer uid, Long money,Long benefitMoney);
 }

@@ -19,12 +19,12 @@ public class PayCallbackServiceImpl implements PayCallbackService {
         if (result.getPayStatus() == 1) {
             BizOrder bizOrder = orderService.getOrderById(result.getMerOrderId());
             // update merchant order to paid
-            orderService.updateSuccess(result.getMerOrderId());
+            orderService.applyPay(result.getMerOrderId());
             // reduce benefit of user
             benefitService.reduce(bizOrder.getUid(),bizOrder.getBenefitMoney());
             // notify message to user
         }else{
-            orderService.updateFail(result.getMerOrderId());
+            orderService.payNotify(result.getMerOrderId());
         }
     }
 }
