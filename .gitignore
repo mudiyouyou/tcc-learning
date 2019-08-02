@@ -11,6 +11,7 @@
 .mtj.tmp/
 .idea
 .DS_Store
+target
 # Package Files #
 *.jar
 *.war
