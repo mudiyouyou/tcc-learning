@@ -7,11 +7,13 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.concurrent.TimeUnit;
+
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest()
 public class OrderServiceImplTest {
 
-    @Reference
+    @Reference()
     IOrderService orderService;
     @Test
     public void testCreate(){
@@ -19,7 +21,22 @@ public class OrderServiceImplTest {
     }
 
     @Test
-    public void testApplyPay() {
-        orderService.applyPay(1);
+    public void testApplyPaySuccess() throws InterruptedException {
+        try {
+            orderService.applyPay(2);
+        } catch (Exception e) {
+
+        }
+        TimeUnit.SECONDS.sleep(5);
+    }
+
+    @Test
+    public void testApplyPayFail() throws InterruptedException {
+        try {
+            orderService.applyPay(1);
+        } catch (Exception e) {
+
+        }
+        TimeUnit.SECONDS.sleep(5);
     }
 }

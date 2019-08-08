@@ -1,20 +1,17 @@
-package com.mudiyouyou.tcc.benefit;
+package com.mudiyouyou.tcc.callback;
 
 import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
-import java.util.concurrent.TimeUnit;
-
-@DubboComponentScan(basePackages = "com.mudiyouyou.tcc.benefit.service")
+@Slf4j
 @SpringBootApplication(exclude = MongoAutoConfiguration.class)
-public class BenefitMain {
+@DubboComponentScan("com.mudiyouyou.tcc.callback.service")
+public class ShoppingMain {
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(BenefitMain.class);
-        while (true) {
-            TimeUnit.HOURS.sleep(1);
-        }
+        SpringApplication.run(ShoppingMain.class);
+        log.info("Shopping is running");
     }
 }

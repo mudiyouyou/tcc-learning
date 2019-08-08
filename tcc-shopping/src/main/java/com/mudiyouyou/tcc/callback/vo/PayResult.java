@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PayResult {
     private int payStatus;
-    private String merOrderId;
+    private Integer merOrderId;
 }
